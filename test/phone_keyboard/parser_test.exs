@@ -1,4 +1,4 @@
-defmodule PhoneKeyboardTest do
+defmodule PhoneKeyboard.ParserTest do
   use ExUnit.Case
   doctest PhoneKeyboard.Parser
 
