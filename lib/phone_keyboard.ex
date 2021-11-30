@@ -12,7 +12,6 @@ defmodule PhoneKeyboard do
   def parse(string) do
     with split <- String.split(string, "-"),
          {:ok, mapped} <- parse_values(split),
-         mapped <- Enum.reverse(mapped),
          do: Enum.join(mapped)
   end
 
@@ -26,7 +25,7 @@ defmodule PhoneKeyboard do
 
     case values do
       {:error, _reason} = error -> error
-      values -> {:ok, values}
+      values -> {:ok, Enum.reverse(values)}
     end
   end
 
